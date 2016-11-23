@@ -1,0 +1,124 @@
+TEST FOR n = 50000:
+BST build duration #1: 0.015277 seconds
+Heap build duration #1: 0.001112 seconds
+BST operation duration #1: 0.000455 seconds
+Heap operation duration #1: 0.0013 seconds
+
+--------------------------------------
+BST build duration #2: 0.016289 seconds
+Heap build duration #2: 0.00111 seconds
+BST operation duration #2: 0.000518 seconds
+Heap operation duration #2: 0.001341 seconds
+
+--------------------------------------
+BST build duration #3: 0.015051 seconds
+Heap build duration #3: 0.001074 seconds
+BST operation duration #3: 0.00053 seconds
+Heap operation duration #3: 0.001275 seconds
+
+--------------------------------------
+BST build duration #4: 0.014776 seconds
+Heap build duration #4: 0.00108 seconds
+BST operation duration #4: 0.000464 seconds
+Heap operation duration #4: 0.001301 seconds
+
+--------------------------------------
+BST build duration #5: 0.014831 seconds
+Heap build duration #5: 0.00108 seconds
+BST operation duration #5: 0.000441 seconds
+Heap operation duration #5: 0.001303 seconds
+
+--------------------------------------
+TEST FOR n = 100000:
+BST build duration #1: 0.032985 seconds
+Heap build duration #1: 0.002153 seconds
+BST operation duration #1: 0.001036 seconds
+Heap operation duration #1: 0.002676 seconds
+
+--------------------------------------
+BST build duration #2: 0.033615 seconds
+Heap build duration #2: 0.002245 seconds
+BST operation duration #2: 0.000964 seconds
+Heap operation duration #2: 0.002667 seconds
+
+--------------------------------------
+BST build duration #3: 0.03316 seconds
+Heap build duration #3: 0.002137 seconds
+BST operation duration #3: 0.001267 seconds
+Heap operation duration #3: 0.002669 seconds
+
+--------------------------------------
+BST build duration #4: 0.033459 seconds
+Heap build duration #4: 0.002159 seconds
+BST operation duration #4: 0.00094 seconds
+Heap operation duration #4: 0.002776 seconds
+
+--------------------------------------
+BST build duration #5: 0.033481 seconds
+Heap build duration #5: 0.002135 seconds
+BST operation duration #5: 0.000911 seconds
+Heap operation duration #5: 0.002689 seconds
+
+--------------------------------------
+TEST FOR n = 200000:
+BST build duration #1: 0.07681 seconds
+Heap build duration #1: 0.004486 seconds
+BST operation duration #1: 0.002316 seconds
+Heap operation duration #1: 0.005691 seconds
+
+--------------------------------------
+BST build duration #2: 0.077299 seconds
+Heap build duration #2: 0.004513 seconds
+BST operation duration #2: 0.002534 seconds
+Heap operation duration #2: 0.006194 seconds
+
+--------------------------------------
+BST build duration #3: 0.078763 seconds
+Heap build duration #3: 0.004309 seconds
+BST operation duration #3: 0.002697 seconds
+Heap operation duration #3: 0.005733 seconds
+
+--------------------------------------
+BST build duration #4: 0.074752 seconds
+Heap build duration #4: 0.004291 seconds
+BST operation duration #4: 0.002108 seconds
+Heap operation duration #4: 0.005656 seconds
+
+--------------------------------------
+BST build duration #5: 0.073202 seconds
+Heap build duration #5: 0.004324 seconds
+BST operation duration #5: 0.002237 seconds
+Heap operation duration #5: 0.005719 seconds
+
+--------------------------------------
+TEST FOR n = 400000:
+BST build duration #1: 0.174818 seconds
+Heap build duration #1: 0.008588 seconds
+BST operation duration #1: 0.006014 seconds
+Heap operation duration #1: 0.012812 seconds
+
+--------------------------------------
+BST build duration #2: 0.179005 seconds
+Heap build duration #2: 0.008637 seconds
+BST operation duration #2: 0.006613 seconds
+Heap operation duration #2: 0.012302 seconds
+
+--------------------------------------
+BST build duration #3: 0.180864 seconds
+Heap build duration #3: 0.00861 seconds
+BST operation duration #3: 0.006292 seconds
+Heap operation duration #3: 0.012249 seconds
+
+--------------------------------------
+BST build duration #4: 0.186352 seconds
+Heap build duration #4: 0.008671 seconds
+BST operation duration #4: 0.006605 seconds
+Heap operation duration #4: 0.012125 seconds
+
+--------------------------------------
+BST build duration #5: 0.176415 seconds
+Heap build duration #5: 0.008637 seconds
+BST operation duration #5: 0.006354 seconds
+Heap operation duration #5: 0.012063 seconds
+
+--------------------------------------

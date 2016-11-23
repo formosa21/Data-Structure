@@ -1,0 +1,124 @@
+TEST FOR n = 50000:
+Leftist Heap build duration #1: 0.047111 seconds
+Skew-Heap build duration #1: 0.007245 seconds
+Leftist Heap operation duration #1: 0.01551 seconds
+Skew-Heap operation duration #1: 0.001668 seconds
+
+--------------------------------------
+Leftist Heap build duration #2: 0.044797 seconds
+Skew-Heap build duration #2: 0.007023 seconds
+Leftist Heap operation duration #2: 0.016045 seconds
+Skew-Heap operation duration #2: 0.001667 seconds
+
+--------------------------------------
+Leftist Heap build duration #3: 0.049474 seconds
+Skew-Heap build duration #3: 0.007221 seconds
+Leftist Heap operation duration #3: 0.016183 seconds
+Skew-Heap operation duration #3: 0.001674 seconds
+
+--------------------------------------
+Leftist Heap build duration #4: 0.044231 seconds
+Skew-Heap build duration #4: 0.007022 seconds
+Leftist Heap operation duration #4: 0.01628 seconds
+Skew-Heap operation duration #4: 0.001667 seconds
+
+--------------------------------------
+Leftist Heap build duration #5: 0.051829 seconds
+Skew-Heap build duration #5: 0.007164 seconds
+Leftist Heap operation duration #5: 0.016223 seconds
+Skew-Heap operation duration #5: 0.00167 seconds
+
+--------------------------------------
+TEST FOR n = 100000:
+Leftist Heap build duration #1: 0.104217 seconds
+Skew-Heap build duration #1: 0.015566 seconds
+Leftist Heap operation duration #1: 0.040937 seconds
+Skew-Heap operation duration #1: 0.004318 seconds
+
+--------------------------------------
+Leftist Heap build duration #2: 0.113288 seconds
+Skew-Heap build duration #2: 0.018063 seconds
+Leftist Heap operation duration #2: 0.03912 seconds
+Skew-Heap operation duration #2: 0.003999 seconds
+
+--------------------------------------
+Leftist Heap build duration #3: 0.107003 seconds
+Skew-Heap build duration #3: 0.017057 seconds
+Leftist Heap operation duration #3: 0.039057 seconds
+Skew-Heap operation duration #3: 0.004013 seconds
+
+--------------------------------------
+Leftist Heap build duration #4: 0.105171 seconds
+Skew-Heap build duration #4: 0.016634 seconds
+Leftist Heap operation duration #4: 0.038973 seconds
+Skew-Heap operation duration #4: 0.003967 seconds
+
+--------------------------------------
+Leftist Heap build duration #5: 0.102441 seconds
+Skew-Heap build duration #5: 0.016595 seconds
+Leftist Heap operation duration #5: 0.040329 seconds
+Skew-Heap operation duration #5: 0.004827 seconds
+
+--------------------------------------
+TEST FOR n = 200000:
+Leftist Heap build duration #1: 0.218969 seconds
+Skew-Heap build duration #1: 0.033089 seconds
+Leftist Heap operation duration #1: 0.102243 seconds
+Skew-Heap operation duration #1: 0.011622 seconds
+
+--------------------------------------
+Leftist Heap build duration #2: 0.242484 seconds
+Skew-Heap build duration #2: 0.040201 seconds
+Leftist Heap operation duration #2: 0.097207 seconds
+Skew-Heap operation duration #2: 0.011272 seconds
+
+--------------------------------------
+Leftist Heap build duration #3: 0.231819 seconds
+Skew-Heap build duration #3: 0.040659 seconds
+Leftist Heap operation duration #3: 0.098217 seconds
+Skew-Heap operation duration #3: 0.01179 seconds
+
+--------------------------------------
+Leftist Heap build duration #4: 0.249705 seconds
+Skew-Heap build duration #4: 0.045313 seconds
+Leftist Heap operation duration #4: 0.105816 seconds
+Skew-Heap operation duration #4: 0.012231 seconds
+
+--------------------------------------
+Leftist Heap build duration #5: 0.271006 seconds
+Skew-Heap build duration #5: 0.050758 seconds
+Leftist Heap operation duration #5: 0.111586 seconds
+Skew-Heap operation duration #5: 0.014415 seconds
+
+--------------------------------------
+TEST FOR n = 400000:
+Leftist Heap build duration #1: 0.543378 seconds
+Skew-Heap build duration #1: 0.074349 seconds
+Leftist Heap operation duration #1: 0.244494 seconds
+Skew-Heap operation duration #1: 0.026274 seconds
+
+--------------------------------------
+Leftist Heap build duration #2: 0.558706 seconds
+Skew-Heap build duration #2: 0.10251 seconds
+Leftist Heap operation duration #2: 0.247763 seconds
+Skew-Heap operation duration #2: 0.026406 seconds
+
+--------------------------------------
+Leftist Heap build duration #3: 0.542109 seconds
+Skew-Heap build duration #3: 0.099363 seconds
+Leftist Heap operation duration #3: 0.253309 seconds
+Skew-Heap operation duration #3: 0.027133 seconds
+
+--------------------------------------
+Leftist Heap build duration #4: 0.617218 seconds
+Skew-Heap build duration #4: 0.10485 seconds
+Leftist Heap operation duration #4: 0.261681 seconds
+Skew-Heap operation duration #4: 0.027505 seconds
+
+--------------------------------------
+Leftist Heap build duration #5: 0.526005 seconds
+Skew-Heap build duration #5: 0.099216 seconds
+Leftist Heap operation duration #5: 0.25561 seconds
+Skew-Heap operation duration #5: 0.027424 seconds
+
+--------------------------------------

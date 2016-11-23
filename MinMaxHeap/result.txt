@@ -1,0 +1,124 @@
+TEST FOR n = 50000:
+MinMaxHeap build duration #1: 0.00214 seconds
+Heap build duration #1: 0.000929 seconds
+MinMaxHeap operation duration #1: 0.000603 seconds
+Heap operation duration #1: 0.001214 seconds
+
+--------------------------------------
+MinMaxHeap build duration #2: 0.002159 seconds
+Heap build duration #2: 0.00093 seconds
+MinMaxHeap operation duration #2: 0.000616 seconds
+Heap operation duration #2: 0.001226 seconds
+
+--------------------------------------
+MinMaxHeap build duration #3: 0.002148 seconds
+Heap build duration #3: 0.000931 seconds
+MinMaxHeap operation duration #3: 0.000594 seconds
+Heap operation duration #3: 0.00137 seconds
+
+--------------------------------------
+MinMaxHeap build duration #4: 0.002125 seconds
+Heap build duration #4: 0.000974 seconds
+MinMaxHeap operation duration #4: 0.000692 seconds
+Heap operation duration #4: 0.001261 seconds
+
+--------------------------------------
+MinMaxHeap build duration #5: 0.002159 seconds
+Heap build duration #5: 0.000931 seconds
+MinMaxHeap operation duration #5: 0.000605 seconds
+Heap operation duration #5: 0.001253 seconds
+
+--------------------------------------
+TEST FOR n = 100000:
+MinMaxHeap build duration #1: 0.004309 seconds
+Heap build duration #1: 0.001887 seconds
+MinMaxHeap operation duration #1: 0.001001 seconds
+Heap operation duration #1: 0.002606 seconds
+
+--------------------------------------
+MinMaxHeap build duration #2: 0.004267 seconds
+Heap build duration #2: 0.001853 seconds
+MinMaxHeap operation duration #2: 0.000987 seconds
+Heap operation duration #2: 0.002625 seconds
+
+--------------------------------------
+MinMaxHeap build duration #3: 0.004257 seconds
+Heap build duration #3: 0.001853 seconds
+MinMaxHeap operation duration #3: 0.001008 seconds
+Heap operation duration #3: 0.002582 seconds
+
+--------------------------------------
+MinMaxHeap build duration #4: 0.004325 seconds
+Heap build duration #4: 0.001854 seconds
+MinMaxHeap operation duration #4: 0.001026 seconds
+Heap operation duration #4: 0.00258 seconds
+
+--------------------------------------
+MinMaxHeap build duration #5: 0.004302 seconds
+Heap build duration #5: 0.001855 seconds
+MinMaxHeap operation duration #5: 0.000986 seconds
+Heap operation duration #5: 0.002579 seconds
+
+--------------------------------------
+TEST FOR n = 200000:
+MinMaxHeap build duration #1: 0.008565 seconds
+Heap build duration #1: 0.003714 seconds
+MinMaxHeap operation duration #1: 0.002049 seconds
+Heap operation duration #1: 0.005764 seconds
+
+--------------------------------------
+MinMaxHeap build duration #2: 0.008502 seconds
+Heap build duration #2: 0.003706 seconds
+MinMaxHeap operation duration #2: 0.001941 seconds
+Heap operation duration #2: 0.005539 seconds
+
+--------------------------------------
+MinMaxHeap build duration #3: 0.008492 seconds
+Heap build duration #3: 0.003705 seconds
+MinMaxHeap operation duration #3: 0.001985 seconds
+Heap operation duration #3: 0.005553 seconds
+
+--------------------------------------
+MinMaxHeap build duration #4: 0.008577 seconds
+Heap build duration #4: 0.003724 seconds
+MinMaxHeap operation duration #4: 0.001998 seconds
+Heap operation duration #4: 0.005567 seconds
+
+--------------------------------------
+MinMaxHeap build duration #5: 0.008514 seconds
+Heap build duration #5: 0.003705 seconds
+MinMaxHeap operation duration #5: 0.001942 seconds
+Heap operation duration #5: 0.00552 seconds
+
+--------------------------------------
+TEST FOR n = 400000:
+MinMaxHeap build duration #1: 0.016962 seconds
+Heap build duration #1: 0.007399 seconds
+MinMaxHeap operation duration #1: 0.003305 seconds
+Heap operation duration #1: 0.011691 seconds
+
+--------------------------------------
+MinMaxHeap build duration #2: 0.01696 seconds
+Heap build duration #2: 0.007402 seconds
+MinMaxHeap operation duration #2: 0.003347 seconds
+Heap operation duration #2: 0.011766 seconds
+
+--------------------------------------
+MinMaxHeap build duration #3: 0.017064 seconds
+Heap build duration #3: 0.007404 seconds
+MinMaxHeap operation duration #3: 0.003354 seconds
+Heap operation duration #3: 0.011764 seconds
+
+--------------------------------------
+MinMaxHeap build duration #4: 0.016958 seconds
+Heap build duration #4: 0.007402 seconds
+MinMaxHeap operation duration #4: 0.003337 seconds
+Heap operation duration #4: 0.011705 seconds
+
+--------------------------------------
+MinMaxHeap build duration #5: 0.017105 seconds
+Heap build duration #5: 0.007545 seconds
+MinMaxHeap operation duration #5: 0.003289 seconds
+Heap operation duration #5: 0.012053 seconds
+
+--------------------------------------
