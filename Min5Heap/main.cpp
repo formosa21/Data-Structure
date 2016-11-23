@@ -1,9 +1,55 @@
 #include "Heap.h"
 #include <fstream>
+#include <iostream>
 
 void printMenu();
+struct edge{
+		int cost;
+		int x;
+		int y;
+		bool operator > (const edge& a){
+			return (cost > a.cost ? true : false);
+		}
+		bool operator < (const edge& a){
+			return (cost < a.cost ? true : false);
+		}
+		bool operator == (const edge& a){
+			return (cost == a.cost ? true : false);
+		}
+		bool operator <= (const edge& a){
+			return (cost <= a.cost ? true : false);
+		}
+		bool operator >= (const edge& a){
+			return (cost >= a.cost ? true : false);
+		}
+		void operator = (const edge& a){
+			cost = a.cost;
+			x = a.x;
+			y = a.y;
+		}
+		friend std::ostream& operator << (std::ostream& os, const edge& a){
+			os << a.cost;
+			return os;
+		}
+
+	};
 
 int main(int argc, char* argv[]){
+
+	edge *e1 = new edge(); e1->cost = 3; e1->x = 1; e1->y = 3;
+	edge *e2 = new edge(); e2->cost = 5; e2->x = 2; e2->y = 4;
+	edge *e3 = new edge(); e3->cost = 1; e3->x = 5; e3->y = 6;
+
+	Heap<edge> *pq = new Heap<edge>();
+	pq->insert(e1);
+	pq->insert(e2);
+	pq->insert(e3);
+	pq->print();
+
+	pq->pop();
+	pq->print();
+
+	/*
 	std::ifstream myfile;
 	myfile.open("data.txt");
 
@@ -56,7 +102,7 @@ int main(int argc, char* argv[]){
 
 
 
-
+	*/
 	return 0;
 }
 
