@@ -1,19 +1,21 @@
 template <typename T>
 Heap<T>::Heap(){
 	m_nodes = 0;
-	m_array = new T*[array_size];	
+	m_array = new T*[array_size];
 	for(int i = 0; i < array_size; i++)
 		m_array[i] = nullptr;
 }
 
 template <typename T>
 Heap<T>::~Heap(){
-	delete m_array;
+	for(int i = 0; i < array_size; i++)
+		delete m_array[i];
+	delete[] m_array;
 }
 
 template <typename T>
 void Heap<T>::print() const{
-	int exponent = 0;	
+	int exponent = 0;
 	for(int i = 0; i < m_nodes ; i++){
 		std::cout << *m_array[i] << " ";
 		if(i == 0){
@@ -65,7 +67,7 @@ void Heap<T>::heapify_compare_child_n_swap(int internal){
 				break;
 		}// end child for loop
 		if(*m_array[min] < *m_array[internal]){
-			swap(internal, min); 
+			swap(internal, min);
 			if(internal <= (furthest_internal/5) ){ // only execute when an internal node's child is an internal node
 				heapify_compare_child_n_swap(min); // check child internals recursively
 			}
@@ -76,7 +78,7 @@ template <typename T>
 void Heap<T>::swap(int position1, int position2){
 	T* temp = m_array[position2];
 	m_array[position2] = m_array[position1];
-	m_array[position1] = temp; 
+	m_array[position1] = temp;
 }
 
 template <typename T>
@@ -179,7 +181,7 @@ void Heap<T>::remove(T* x){
 				m_array[index_x] = m_array[m_nodes - 1];
 				delete m_array[m_nodes - 1];
 				m_array[m_nodes - 1] = nullptr;
-				m_nodes--;	
+				m_nodes--;
 				// if index_x is a leaf
 				if(index_x > get_last_internal_index())
 					push_up(index_x);
@@ -216,4 +218,3 @@ T* Heap<T>::pop(){
 		return temp;
 	}
 }
-
