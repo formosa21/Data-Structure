@@ -3,7 +3,9 @@
 
 #include "Set.h"
 #include "./Min5Heap/Heap.h"
-#include "./Linkedlist/linkedlist.h"
+//#include "./Linkedlist/linkedlist.h"
+#include "./BinarySearchTree/BinarySearchTree.h"
+//#include "./HashTable/Hash_Table.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -53,6 +55,19 @@ class Min_Span_Tree{
 			bool operator == (const vertex& v){
 				return (label == v.label ? true : false);
 			}
+			bool operator > (const vertex& a){
+				return (label > a.label ? true : false);
+			}
+			bool operator < (const vertex& a){
+				return (label < a.label ? true : false);
+			}
+			bool operator <= (const vertex& a){
+				return (label <= a.label ? true : false);
+			}
+			bool operator >= (const vertex& a){
+				return (label >= a.label ? true : false);
+			}
+
 			friend std::ostream& operator << (std::ostream& os, const vertex& a){
 				os << a.label;
 				return os;
@@ -62,15 +77,17 @@ class Min_Span_Tree{
 		int **adj_matrix;
 		Heap<edge> pq;
 		vertex *vertices;
-		linkedlist<int> *v_t = new linkedlist<int>(); //lable of vertices
+		//linkedlist<int> *vv_t = new linkedlist<int>(); //lable of vertices
+		BinarySearchTree<int> *v_t = new BinarySearchTree<int>();
+		//Hash_Table *v_t = new Hash_Table(500);
 		int dimension;
-		int inf = 99999;
+		int inf = 9999999;
 	public:
 		Min_Span_Tree();
 		~Min_Span_Tree();
 		void kruskal();
 		void prim();
-		void prim_update_cost(int vertex_label, bool in_set[]); //once the vertex is inserted, we update it;
+		void prim_update_cost(int vertex_label); //once the vertex is inserted, we update it;
 };
 
 

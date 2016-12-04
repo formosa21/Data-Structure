@@ -1,30 +1,29 @@
 #include "Min_Span_Tree.h"
+#include "./Timer/Timer.cpp"
+#include <iostream>
 
 Min_Span_Tree::Min_Span_Tree(){
+	int test_set[] = {500, 1000, 2000, 4000};
+	std::ofstream write;
+	write.open("result.txt");
+	int matrices_count = 4;
+	Timer my_timer;
+	double duration;
+	double generated;
 
-	std::ifstream read;
-	read.open("data.txt");
-	std::string line;
-	std::getline(read, line);
-	int matrices_count = atoi(line.c_str());
 
 	for(int i = 0; i < matrices_count; i++){
-		std::getline(read, line);
-		dimension = atoi(line.c_str());
+		dimension = test_set[i];
 		adj_matrix = new int*[dimension];
+		srand(i);
 		for(int j = 0; j < dimension; j++)
 			adj_matrix[j] = new int[dimension];
-
 		for(int k = 0; k < dimension; k++){
-			std::getline(read, line);
-			char *token = strtok((char*)line.c_str(), " ");
-			int j = 0;
-			do{
-				if(token != nullptr)
-					adj_matrix[k][j] = atoi(token);
-				token = strtok(NULL, " ");
-				j++;
-			}while(token != nullptr);
+			for(int j = 0; j < dimension; j++){
+					generated = static_cast<double>(rand()) / RAND_MAX;
+					adj_matrix[k][j] = (generated >= 0 && generated < 0.5) ? inf : (rand()%(4*dimension) + 1);
+					//std::cout << adj_matrix[k][j] << " ";
+			}
 		}
 		/*
 		for(int k = 0; k < dimension; k++){
@@ -35,12 +34,17 @@ Min_Span_Tree::Min_Span_Tree(){
 		}
 		*/
 		std::cout << "Graph "<< i <<": \n";
-
+		std::cout << "Dimension: " << dimension << "\n";
+		my_timer.start();
 		kruskal();
+		duration = my_timer.stop();
+		std::cout << "done1: " << duration << "\n";
+		my_timer.start();
 		prim();
+		duration = my_timer.stop();
+		std::cout << "done2: " << duration << "\n";
 
-
-		delete v_t; v_t = new linkedlist<int>();
+		delete v_t; v_t = new BinarySearchTree<int>();
 		for(int i = 0; i < dimension; i++){
 				delete[] adj_matrix[i];
 				delete[] vertices[i].cost;
@@ -50,7 +54,6 @@ Min_Span_Tree::Min_Span_Tree(){
 		delete[] adj_matrix;
 	}
 
-	read.close();
 	delete v_t;
 
 }
@@ -63,6 +66,7 @@ void Min_Span_Tree::kruskal(){
 	//queue the edges
 	for(int i = 0; i < dimension; i++){
 		for(int j = 0; j < dimension; j++){
+			//std::cout << "inserting at position [" << i << "][" << j << "]\n";
 			if(adj_matrix[i][j] != 0){
 				edge *e = new edge(); e->x = i; e->y = j; e->cost = adj_matrix[i][j];
 				pq.insert(e);
@@ -88,14 +92,16 @@ void Min_Span_Tree::kruskal(){
 			delete e; e = nullptr;
 		}
 	}
+	/*
 	std::cout << "Kruskal: ";
 	for(int i = 0; i < dimension -1; i++)
 		std::cout << "(" << min_span_tree[i]->x << ", " << min_span_tree[i]->y << ")";
+	*/
 	for(edge *i : min_span_tree){ delete i; i = nullptr;}
 }
 
 void Min_Span_Tree::prim(){
-
+	//std::cout << "hi! dimension " << dimension << "\n";
 	edge *min_span_tree[dimension -1];
 	int inserted_edge_count = 0;
 	//initialize set of vertices
@@ -111,14 +117,10 @@ void Min_Span_Tree::prim(){
 		}
 	}
 
-	bool is_in_set[dimension];
-	for(int i = 0; i < dimension; i++){
-		is_in_set[i] = false;
-	}
+
 	//set V_t = {0};
-	v_t->insert(vertices[0].label);
-	is_in_set[0] = true;
-	prim_update_cost(vertices[0].label, is_in_set);
+	v_t->add(vertices[0].label);
+	prim_update_cost(vertices[0].label);
 
 	//v_t->print();
 	std::cout << "\n";
@@ -127,45 +129,49 @@ void Min_Span_Tree::prim(){
 		int min = inf;
 		vertex *w = nullptr;
 		int other_index;
-		for(int i = 0; i < dimension; i++){
-			// this should skip the vertices that are already in the set
-			if(is_in_set[i]) //if the vertex is included in the set; like if we start at vertex 1, then vertex 1 is in the set
+		for(int i = 1; i < dimension; i++){
+			if(v_t->find(vertices[i].label)){ // if the vertex[i] is included in the set
+				//std::cout << "waiting find process 1\n";
 				continue;
-			else{ //this should skip the vertices that are already in the set
+			}
+			else{  // if the vertex[i] is NOT included in the set
 				for(int j = 0; j < dimension; j++){
-					if(!is_in_set[j]) // if the vertex is not in the set
+					if(!v_t->find(vertices[j].label)){
+						//std::cout << "waiting find process 2\n";
 						continue;
+					}
 					else{
 						if(vertices[i].cost[j] < min){
 							min = vertices[i].cost[j];
 							w = &vertices[i];
 							other_index = j; //other vertex's index
 						}
-					}
-				}
-			}
-		}
-
+					}//end else
+				}//end for
+			}//end else
+		}//end for
 
 		if(w != nullptr)
-			v_t->insert((*w).label); // might be a problem if no vertex is selected;
-		is_in_set[(*w).label]	= true;
+			v_t->add((*w).label); // might be a problem if no vertex is selected;
+
 		edge *e = new edge(); e->x = (*w).label; e->y = other_index; e->cost = (*w).cost[other_index];
 		min_span_tree[inserted_edge_count] = e;
 		inserted_edge_count++;
-		prim_update_cost(other_index, is_in_set);
+		prim_update_cost(other_index);
 		//v_t->print();
 		//std::cout << "\n";
 	}//end while
+	/*
 	std::cout << "Prim: ";
 	for(int i = 0; i < dimension -1; i++)
 		std::cout << "(" << min_span_tree[i]->x << ", " << min_span_tree[i]->y << ")";
 	std::cout << "\n\n";
+	*/
 	for(edge *i : min_span_tree){ delete i; i = nullptr;}
 
 }
 
-void Min_Span_Tree::prim_update_cost(int vertex_label, bool is_in_set[]){
+void Min_Span_Tree::prim_update_cost(int vertex_label){
 	for(int i = 0; i < dimension; i++){
 		if(i == vertex_label){
 			for(int j = 0; j < dimension; j++){
@@ -174,13 +180,15 @@ void Min_Span_Tree::prim_update_cost(int vertex_label, bool is_in_set[]){
 		}
 		else{
 			for(int j = 0; j < dimension; j++){
-				if(!is_in_set[j])
+				if(!v_t->find(vertices[j].label)){
+					//std::cout << "waiting find process 3\n";
 					continue;
+				}
 				else{
 					if(vertices[i].cost[j] > adj_matrix[i][j] && adj_matrix[i][j] != 0)
 						vertices[i].cost[j] = adj_matrix[i][j];
 				}
-			}
+			}//end for
 		}
-	}
+	}//end for
 }

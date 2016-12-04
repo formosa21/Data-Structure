@@ -1,0 +1,51 @@
+void Heap::heapify(){
+	// first internal node = floor ((n -2) / 5) ; for 5-ary tree
+	// this is only executed when there are at least 2 nodes
+	int min; // the index of the smallest ith child
+	int internal = (m_nodes - 2) / 5;
+	for(;internal >= 0; internal--){
+		for(int i = 1; i <= k; i++){
+			int ith_child = k*internal + i;
+		//	if(m_array[ith_child] == -1)
+		//		break;
+			if(m_array[ith_child] != -1){
+				std::cout << i << "th child comparison" << "\n";
+				std::cout << "comparing internal " << internal << " with " << ith_child << "\n";
+				if(i == 1)
+					min = ith_child;
+				else{
+					if(m_array[min] > min)
+						min = ith_child;
+				}
+			}
+			else
+				break;
+
+			/*
+			if(m_array[ith_child] < m_array[internal]){
+				swap(ith_child, internal);
+				// now, look up the parent nodes
+				int internal_parent = (internal-1)/5;
+				int internal_copy = internal;
+
+				if(internal_parent == internal_copy){
+					// both are 0; at the root
+				}
+				else{
+					do{
+						if(m_array[internal] < m_array[internal_parent])
+							swap(internal_copy, internal_parent);
+						else
+							break;
+						internal_copy = internal_parent;
+						internal_parent = (internal_parent-1)/5;
+					}while(internal_parent != 0);
+				}
+			}*/
+		}// end child for loop
+		if(min < m_array[internal]){
+			std::cout << "swap " << internal << " with " << min << "\n";
+			swap(internal, min); 
+		}
+	}
+}
