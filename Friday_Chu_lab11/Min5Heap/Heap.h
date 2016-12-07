@@ -7,7 +7,7 @@ class Heap{
 	// a min 5-heap
 	private:
 		const int k = 5; // a k-ary tree
-		const int array_size = 16000000; // array used to fill the node values
+		const int array_size = 16000001; // array used to fill the node values
 		T **m_array;
 		int m_nodes; // keeping track of how many nodes
 		void push_down();

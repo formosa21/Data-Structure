@@ -75,19 +75,19 @@ class Min_Span_Tree{
 		};
 
 		int **adj_matrix;
-		Heap<edge> pq;
+		Heap<edge> *pq;
 		vertex *vertices;
 		//linkedlist<int> *vv_t = new linkedlist<int>(); //lable of vertices
 		BinarySearchTree<int> *v_t = new BinarySearchTree<int>();
 		//Hash_Table *v_t = new Hash_Table(500);
 		int dimension;
-		int inf = 9999999;
+		int inf = 99999;
 	public:
 		Min_Span_Tree();
 		~Min_Span_Tree();
 		void kruskal();
 		void prim();
-		void prim_update_cost(int vertex_label); //once the vertex is inserted, we update it;
+		void prim_update_cost(int vertex_label, bool in_set[]); //once the vertex is inserted, we update it;
 };
 
 

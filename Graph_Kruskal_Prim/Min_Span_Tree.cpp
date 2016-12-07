@@ -135,7 +135,7 @@ void Min_Span_Tree::prim(){
 				for(int j = 0; j < dimension; j++){
 					if(!is_in_set[j]) // if the vertex is not in the set
 						continue;
-					else{
+					else{//vertex i not in the set, vertex j in the set
 						if(vertices[i].cost[j] < min){
 							min = vertices[i].cost[j];
 							w = &vertices[i];
@@ -176,8 +176,8 @@ void Min_Span_Tree::prim_update_cost(int vertex_label, bool is_in_set[]){
 			for(int j = 0; j < dimension; j++){
 				if(!is_in_set[j])
 					continue;
-				else{
-					if(vertices[i].cost[j] > adj_matrix[i][j] && adj_matrix[i][j] != 0)
+				else{//vertex i not in the set, vertex j in the set
+					if(vertices[i].cost[j] > adj_matrix[i][j])
 						vertices[i].cost[j] = adj_matrix[i][j];
 				}
 			}
