@@ -127,6 +127,7 @@ void Min_Span_Tree::prim(){
 		int min = inf;
 		vertex *w = nullptr;
 		int other_index;
+
 		for(int i = 0; i < dimension; i++){
 			// this should skip the vertices that are already in the set
 			if(is_in_set[i]) //if the vertex is included in the set; like if we start at vertex 1, then vertex 1 is in the set
@@ -145,6 +146,7 @@ void Min_Span_Tree::prim(){
 				}
 			}
 		}
+		
 
 
 		if(w != nullptr)
@@ -166,6 +168,18 @@ void Min_Span_Tree::prim(){
 }
 
 void Min_Span_Tree::prim_update_cost(int vertex_label, bool is_in_set[]){
+	for(int i = 0; i < dimension; i++)
+		vertices[vertex_label].cost[i] = inf;
+	for(int i = 0; i < dimension; i++){
+		if(!is_in_set[i]){
+			//std::cout << "waiting find process 3\n";
+			for(int j = 0; j < dimension; j++){
+				if(vertices[i].cost[j] > adj_matrix[i][j] && adj_matrix[i][j] != 0)
+					vertices[i].cost[j] = adj_matrix[i][j];
+			}
+		}
+	}
+	/*
 	for(int i = 0; i < dimension; i++){
 		if(i == vertex_label){
 			for(int j = 0; j < dimension; j++){
@@ -183,4 +197,5 @@ void Min_Span_Tree::prim_update_cost(int vertex_label, bool is_in_set[]){
 			}
 		}
 	}
+	*/
 }
